@@ -1,0 +1,19 @@
+{
+  "prediction": "Counterfeit",
+  "confidence_score": 0.9626,
+  "class_probabilities": {
+    "Authentic": 0.0374,
+    "Counterfeit": 0.9626
+  },
+  "features_considered": [
+    "logo placement",
+    "text alignment / typography",
+    "color consistency",
+    "barcode / QR presence",
+    "packaging seal quality"
+  ],
+  "explanations": {
+    "lime_image_path": "outputs\\lime_explanation.png",
+    "shap_image_path": "outputs\\shap_explanation.png"
+  }
+}
