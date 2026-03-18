@@ -62,10 +62,7 @@ def _load_model() -> torch.nn.Module:
 @app.on_event("startup")
 def startup_event():
     OUTPUTS_DIR.mkdir(parents=True, exist_ok=True)
-    try:
-        _load_model()
-    except FileNotFoundError as e:
-        print(f"   {e}")
+    print("App started. Model will load on first request.")
 @app.get("/health")
 def health():
     model_ready = MODEL_WEIGHTS.exists()
