@@ -136,7 +136,6 @@ def serve_output(filename: str):
     if not path.exists() or path.suffix.lower() != ".png":
         raise HTTPException(status_code=404, detail="File not found")
     return FileResponse(str(path), media_type="image/png")
-# Dev runner
-# ─────────────────────────────────────────────
 if __name__ == "__main__":
-    uvicorn.run("api.app:app", host="0.0.0.0", port=8000, reload=True)
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run("api.app:app", host="0.0.0.0", port=port)
